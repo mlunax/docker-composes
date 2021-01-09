@@ -12,6 +12,7 @@ services:
       - DB_DATABASE=keycloak
       - DB_USER_FILE=/run/secrets/KEYCLOAK_DB_USER
       - DB_PASSWORD_FILE=/run/secrets/KEYCLOAK_DB_PWD
+      - PROXY_ADDRESS_FORWARDING=true
     secrets:
       - KEYCLOAK_DB_USER
       - KEYCLOAK_DB_PWD
