@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  rwtxt:
+    image: schollz/rwtxt:latest
+    ports: [ 8080:8152 ]
+    volumes: [ rwtxt:/data ]
+  
+volumes:
+  rwtxt:
