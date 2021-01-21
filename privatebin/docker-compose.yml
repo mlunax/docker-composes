@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  bin:
+    image: privatebin/nginx-fpm-alpine
+    ports: [127.0.0.1:8080:8080]
+    volumes: [privatebin-data:/srv/data]
+    read_only: true
+
+volumes:
+  privatebin-data:
