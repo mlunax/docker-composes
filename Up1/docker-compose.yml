@@ -1,0 +1,8 @@
+version: "3.6"
+services:
+  Up1:
+    image: mlunax/up1
+    ports: [127.0.0.1:8080:80]
+    volumes:
+      - ./i:/Up1/i
+    env_file: .env
