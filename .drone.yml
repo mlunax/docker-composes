@@ -1,0 +1,28 @@
+---
+kind: pipeline
+name: push to mirrors
+steps:
+  - name: push to github mirror
+    image: appleboy/drone-git-push
+    settings:
+      branch: master
+      remote: ssh://git@github.com/mlunax/docker-composes.git
+      ssh_key:
+        from_secret: ssh_key
+      commit: false
+  - name: push to gitlab mirror
+    image: appleboy/drone-git-push
+    settings:
+      branch: master
+      remote: ssh://git@gitlab.com/mlunax/docker-composes.git
+      ssh_key:
+        from_secret: ssh_key
+      commit: false
+trigger:
+  ref:
+    - refs/heads/master
+---
+kind: signature
+hmac: e2a930af2fa061343b3f2f1069bc96c96546ffb37a8e8364373c29ec6cb4db76
+
+...
