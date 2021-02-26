@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  webhookd:
+    image: ncarlier/webhookd
+    ports: [127.0.0.1:8080:8080]
+    volumes: [./scripts:/var/opt/webhookd/scripts]
+    read_only: true
+    command: webhookd --scripts=/var/opt/webhookd/scripts
